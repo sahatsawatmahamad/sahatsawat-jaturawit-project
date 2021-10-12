@@ -1,10 +1,3 @@
-"""
-Hand Tracing Module
-By: Murtaza Hassan
-Youtube: http://www.youtube.com/c/MurtazasWorkshopRoboticsandAI
-Website: https://www.murtazahassan.com/
-"""
-
 import cv2
 import mediapipe as mp
 import time
@@ -17,7 +10,6 @@ class handDetector():
         self.maxHands = maxHands
         self.detectionCon = detectionCon
         self.tracCon = trackCon
-
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(self.mode,self.maxHands,self.detectionCon,self.tracCon)
         self.mpDraw = mp.solutions.drawing_utils
@@ -66,10 +58,8 @@ class handDetector():
 
         return self.lmList, bbox
 
-
     def fingersUp(self):
         fingers = []
-
         if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:
             fingers.append(1)
         else:
@@ -80,13 +70,7 @@ class handDetector():
                 fingers.append(1)
             else:
                 fingers.append(0)
-
         return fingers
-
-
-
-
-
 
     def findDistance(self,p1,p2,img ,draw=True,r=15,t=3):
         x1,y1 = self.lmList[p1][1:]
@@ -123,7 +107,6 @@ def main():
 
         cv2.imshow("image", img)
         cv2.waitKey(1)
-
 
 if __name__ == "__main__":
     main()

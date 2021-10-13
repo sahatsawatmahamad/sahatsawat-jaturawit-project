@@ -1,0 +1,52 @@
+.key {
+    display: flex;
+    
+    position: absolute;
+    bottom: 1%;
+    justify-content: center;
+}
+.key canvas{
+    width: 8%;
+    height: 300px;
+    object-fit: none;
+    border: white;
+    border-style: solid;
+    border-width: thin;
+}
+.keytype canvas{
+    width: 8%;
+    height: 1%;
+    object-fit: none;
+    border: black;
+    border-style: solid;
+    border-width: thin;
+}
+.keytype {
+    display: flex;
+    
+    position: absolute;
+    bottom: 30%;
+    justify-content: center;
+}
+#C1,#C2,#C3{
+    background-color: purple;
+}
+#D1,#D2,#D3{
+    background-color: skyblue;
+}
+#E1,#E2,#E3{
+    background-color: blue;
+}
+#F1,#F2,#F3{
+    background-color: green;
+}
+#G1,#G2,#G3{
+    background-color: yellow;
+}
+#A1,#A2,#A3{
+    background-color: orange;
+}
+#B1,#B2,#B3{
+    background-color: red;
+}
+

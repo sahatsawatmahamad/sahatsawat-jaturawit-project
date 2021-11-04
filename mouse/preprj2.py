@@ -11,6 +11,10 @@ wCam, hCam = 640, 480
 frameR = 100 #frame Reduction
 # frameCenter = (int(wScr)/2,int(hScr)/2)
 
+smooth = 5
+pTime = 0
+plocX,plocY = 0,0
+clocX,clocY = 0,0
 ###############
 
 cap = cv2.VideoCapture(0)
@@ -19,14 +23,12 @@ cap.set(4, hCam)
 pTime = 0
 detector = htm.handDetector(maxHands=1)
 
-
 while True:
     #1. หามือ
     success, img0 = cap.read()
     img = cv2.flip(img0,1)
     img = detector.findHands(img)
     lmList, bbox = detector.findPosition(img)
-
     #
     if len(lmList)!=0:
         x1, y1 = lmList[8][1:]
@@ -38,20 +40,32 @@ while True:
         print(fingers)
         cv2.circle(img, (320, 240), 5, (255, 0, 0), 10)
         cv2.rectangle(img, (frameR, frameR), (wCam - frameR, hCam - frameR), (255, 0, 255), 2)
-
     #
         if fingers[1] ==1 and fingers[2] ==0:
 
             # x3 = np.interp(x1, (0,wCam),(0,wScr))
             # y3 = np.interp(y1, (0, hCam), (0, hScr))
-    #สร้างframe
+    # สร้างframe
+
+            # --------------------บัค
             x3 = np.interp(x1, (frameR, wCam-frameR), (0, wScr))
             y3 = np.interp(y1, (frameR, hCam-frameR), (0, hScr))
-            print("นิวชี้")
-    #
+
+            # print("นิวชี้")
+
+            # clocX = plocX +(x3-plocX) / smooth
+            # clocY = plocY + (x3 - plocY) / smooth
+    #--------------------บัค
     #ขยับเมาส์
-            autopy.mouse.move(x3,y3)
+
+
+            cX = plocX + (x3 - plocX) * 0.9999
+            cY = plocY + (y3 - plocY) * 0.9999
+
+            autopy.mouse.move(cX, cY)
+            # autopy.mouse.move(clocX,clocY)
             cv2.circle(img,(x1,y1),10,(0,255,0),cv2.FILLED)
+            plocX,plocY = clocX,clocY
     #--------------- เพิ่มลูกเล่น
         # if fingers[0] ==1:
         #     print("นิ้วโป้ง")
@@ -67,11 +81,12 @@ while True:
     #---------------
         if fingers[1] == 1 and fingers[2] == 1:
             length, img, lineInfo = detector.findDistance(8,12,img)
-            print(length)
+            # print(length)
             ##click-------------
-            # if length < 20:
-            #     cv2.circle(img,(lineInfo[4],lineInfo[5]),15,(255,0,255),cv2.FILLED)
-            #     autopy.mouse.click()
+            if length < 40:
+                cv2.circle(img,(lineInfo[4],lineInfo[5]),15,(255,0,255),cv2.FILLED)
+                print("click")
+                autopy.mouse.click()
             #---------------------
     #
     #

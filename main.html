@@ -15,7 +15,16 @@
 
 
 <body >
-    <a href="./main_keyboard.html">keyboard</a>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./main_keyboard.html">keyboard</a>
+        <a href="#">Gamemode</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Choose mode</button>
+    </div>
     <div class="title">
         <p id="appTitle">Visual Instrument</p>
     </div>
@@ -47,6 +56,7 @@
             
         </div>
     </div>
+    
     <script src="./scripts/main.js"></script>
     <script>
         // var soundC1 = new Audio(src = "./sounds/piano_note/Music_Note/C.wav");

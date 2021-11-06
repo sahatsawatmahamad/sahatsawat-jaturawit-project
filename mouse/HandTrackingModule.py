@@ -16,7 +16,6 @@ class handDetector():
 
         self.tipIds = [4,8,12,16,20]
 
-
     def findHands(self, img , draw = True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
@@ -55,7 +54,6 @@ class handDetector():
 
             if draw:
                 cv2.rectangle(img,(xmin -20,ymin - 20),(xmax + 20,ymax +20),(0,255,0),2)
-
         return self.lmList, bbox
 
     def fingersUp(self):

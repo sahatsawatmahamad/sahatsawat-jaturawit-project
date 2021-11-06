@@ -10,15 +10,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
-    
+
 </head>
 
 
-<body >
+<body>
+    <div>
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="./main_keyboard.html">keyboard</a>
-        <a href="#">Gamemode</a>
+        <a href="./main_onClick.html">Gamemode</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
@@ -28,6 +43,7 @@
     <div class="title">
         <p id="appTitle">Visual Instrument</p>
     </div>
+    
     <div class="piano">
         <div class="keytype">
             <canvas id="Q"></canvas>
@@ -40,7 +56,7 @@
             <canvas id="I"></canvas>
             <canvas id="O"></canvas>
             <canvas id="P"></canvas>
-            
+
         </div>
         <div class="key">
             <canvas class="note" id="C1"></canvas>
@@ -53,10 +69,10 @@
             <canvas class="note" id="C2"></canvas>
             <canvas class="note" id="D2"></canvas>
             <canvas class="note" id="E2"></canvas>
-            
+
         </div>
     </div>
-    
+
     <script src="./scripts/main.js"></script>
     <script>
         // var soundC1 = new Audio(src = "./sounds/piano_note/Music_Note/C.wav");

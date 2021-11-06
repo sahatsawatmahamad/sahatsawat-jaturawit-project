@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
-    
+
 </head>
 
 
-<body >
+<body>
     <div>
         <ul class="circles">
             <li></li>
@@ -32,7 +32,7 @@
     
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="./main.html">mouse</a>
+        <a href="./main_keyboard.html">keyboard</a>
         <a href="./main_onClick.html">Gamemode</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
@@ -40,7 +40,6 @@
     <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776; Choose mode</button>
     </div>
-    
     <div class="title">
         <p id="appTitle">Visual Instrument</p>
     </div>
@@ -56,7 +55,7 @@
             <canvas id="I"></canvas>
             <canvas id="O"></canvas>
             <canvas id="P"></canvas>
-            
+
         </div>
         <div class="key">
             <canvas class="note" id="C1"></canvas>
@@ -69,10 +68,12 @@
             <canvas class="note" id="C2"></canvas>
             <canvas class="note" id="D2"></canvas>
             <canvas class="note" id="E2"></canvas>
-            
+
         </div>
     </div>
-    <script src="./scripts/tons.js"></script>
+
+    <script src="./scripts/tone_onclick.js"></script>
+    <script src="./scripts/click.js"></script>
 </body>
 
 </html>

@@ -34,14 +34,14 @@ function test(index) {
     var noteElement = document.getElementById(jingleBell[index]);
     // let note_jing = jingleBell[k]
     // console.log(noteElement);
-    noteElement.style.borderStyle = "dotted";
-    noteElement.style.borderWidth = "thick";
+    noteElement.classList.add("tran");
+    noteElement.style.opacity= "1"
     noteElement.addEventListener("click", function () {
       // console.log(jingleBell[index]);
       // console.log(noteElement.id);
       if (noteElement.id == jingleBell[index]) {
-        noteElement.style.borderStyle = "solid";
-        noteElement.style.borderWidth = "thin";
+        noteElement.classList.remove("tran");
+        noteElement.style.opacity= "0.6"
         console.log("match");
         test(++index);
       } else {

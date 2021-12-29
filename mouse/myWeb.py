@@ -52,6 +52,26 @@ def gen():
                 cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
                 cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
+            if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
+                x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
+                y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+
+                # print("นิวชี้")
+                # clocX = plocX +(x3-plocX) / smooth
+                # clocY = plocY + (x3 - plocY) / smooth
+                # ขยับเมาส์
+
+                cX = plocX + (x3 - plocX) * 0.999999999
+                cY = plocY + (y3 - plocY) * 0.999999999
+
+                autopy.mouse.move(cX, cY)
+                # autopy.mouse.move(clocX,clocY)
+                cv2.circle(img, (x2, y2), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+                plocX, plocY = clocX, clocY
 
         cv2.imwrite('t.jpg', img)
         yield (b'--frame\r\n'
@@ -64,7 +84,7 @@ def index():
     #return render_template('index.html')
     return render_template_string('''<html>
 <head>
-    <title>Video Streaming </title>
+    <title>Video Test</title>
 </head>
 <body>
     <div>

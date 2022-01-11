@@ -48,3 +48,7 @@ keyList.forEach((key) => {
   ctx.textAlign = "center";
   ctx.fillText(key, canvas.width / 2, canvas.height / 2);
 });
+function setting(){
+  document.getElementById("settingform").style.width = "180px";
+  document.getElementById("settingform").style.height = "180px";
+}

@@ -114,3 +114,7 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+function setting(){
+  document.getElementById("settingform").style.width = "180px";
+  document.getElementById("settingform").style.height = "180px";
+}

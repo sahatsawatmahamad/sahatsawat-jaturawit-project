@@ -53,3 +53,7 @@ function test(index) {
     });
   }
 }
+function setting(){
+  document.getElementById("settingform").style.width = "180px";
+  document.getElementById("settingform").style.height = "180px";
+}

@@ -27,42 +27,57 @@ def gen():
             a1, b1 = lmList[4][1:]
             a2, b2 = lmList[16][1:]
             a3, b3 = lmList[20][1:]
+            landmark9_1, landmark9_2 = lmList[9][1:]
+
             #
             fingers = detector.fingersUp()
             print(fingers)
             cv2.circle(img, (320, 240), 5, (255, 0, 0), 10)
             cv2.rectangle(img, (frameR, frameR), (wCam - frameR, hCam - frameR), (255, 0, 255), 2)
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 0:
-                x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+
+                # ปลายนิ้วกลาง
+                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
+                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+
+                # แลนมาคที่9
+                lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
+                lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
+
 
                 # print("นิวชี้")
                 # clocX = plocX +(x3-plocX) / smooth
                 # clocY = plocY + (x3 - plocY) / smooth
                 # ขยับเมาส์
 
-                cX = plocX + (x3 - plocX) * 0.999999999
-                cY = plocY + (y3 - plocY) * 0.999999999
+                cX = plocX + (lanmark9x - plocX) * 0.999999999
+                cY = plocY + (lanmark9y - plocY) * 0.999999999
 
                 autopy.mouse.move(cX, cY)
                 # autopy.mouse.move(clocX,clocY)
-                cv2.circle(img, (x2, y2), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (landmark9_1, landmark9_2), 10, (0, 255, 0), cv2.FILLED)
+                # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
+                # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
+                # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
+                # cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
-                x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+                #ปลายนิ้วกลาง
+                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
+                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+
+                # แลนมาคที่9
+                lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
+                lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
+
 
                 # print("นิวชี้")
                 # clocX = plocX +(x3-plocX) / smooth
                 # clocY = plocY + (x3 - plocY) / smooth
                 # ขยับเมาส์
-
-                cX = plocX + (x3 - plocX) * 0.999999999
-                cY = plocY + (y3 - plocY) * 0.999999999
+#-------------------------------------------------
+                cX = plocX + (lanmark9x - plocX) * 0.999999999
+                cY = plocY + (lanmark9y - plocY) * 0.999999999
 
                 autopy.mouse.move(cX, cY)
                 # autopy.mouse.move(clocX,clocY)
@@ -72,6 +87,34 @@ def gen():
                 cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
                 cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
+
+            # Click
+            if fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 1:
+                autopy.mouse.click()
+
+            # Click
+            elif fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 0:
+                autopy.mouse.click()
+
+
+            elif fingers[0] == 1 and fingers[1] == 0:
+                autopy.mouse.click()
+                print("ท่าที่1")
+
+
+            elif fingers[0] == 1 and fingers[2] == 0:
+                autopy.mouse.click()
+                print("ท่าที่2")
+
+
+            elif fingers[0] == 1 and fingers[3] == 0:
+                autopy.mouse.click()
+                print("ท่าที่3")
+
+
+            elif fingers[0] == 1 and fingers[4] == 0:
+                autopy.mouse.click()
+                print("ท่าที่4")
 
         cv2.imwrite('t.jpg', img)
         yield (b'--frame\r\n'
@@ -89,7 +132,7 @@ def index():
 <body>
     <div>
         <h1 style="text-align:center">Image</h1>
-        <img style="margin-left:auto,margin-right:auto" id="img" src="{{ url_for('video_feed') }}">
+        <img style="text-align:center" id="img" src="{{ url_for('video_feed') }}">
     </div>
     
 </body>

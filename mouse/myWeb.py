@@ -9,11 +9,16 @@ video_capture = cv2.VideoCapture(0)
 
 def gen():
     detector = htm.handDetector(maxHands=1)
-    wCam, hCam = 640, 480
-    frameR = 100
+    wCam, hCam = 320, 240
+    frameR = 50
     plocX, plocY = 0, 0
     clocX, clocY = 0, 0
-    wCam, hCam = 640, 480
+
+    video_capture.set(3,wCam)
+    video_capture.set(4, hCam)
+
+
+
 
     wScr, hScr = autopy.screen.size()
     while True:
@@ -31,8 +36,8 @@ def gen():
 
             #
             fingers = detector.fingersUp()
-            print(fingers)
-            cv2.circle(img, (320, 240), 5, (255, 0, 0), 10)
+
+            cv2.circle(img, (160, 120), 3, (255, 0, 0), 10)
             cv2.rectangle(img, (frameR, frameR), (wCam - frameR, hCam - frameR), (255, 0, 255), 2)
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 0:
 
@@ -55,7 +60,7 @@ def gen():
 
                 autopy.mouse.move(cX, cY)
                 # autopy.mouse.move(clocX,clocY)
-                cv2.circle(img, (landmark9_1, landmark9_2), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
                 # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
                 # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
                 # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
@@ -124,7 +129,7 @@ def gen():
 @app.route('/')
 def index():
     """Video streaming"""
-    #return render_template('index.html')
+    # return render_template('index.html')
     return render_template_string('''<html>
 <head>
     <title>Video Test</title>
@@ -134,7 +139,7 @@ def index():
         <h1 style="text-align:center">Image</h1>
         <img style="text-align:center" id="img" src="{{ url_for('video_feed') }}">
     </div>
-    
+
 </body>
 </html>''')
 

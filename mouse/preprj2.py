@@ -7,7 +7,7 @@ import autopy
 ###############
 wScr, hScr = autopy.screen.size()
 print(wScr,hScr)
-wCam, hCam = 640, 480
+wCam, hCam = 320, 240
 frameR = 100 #frame Reduction
 
 smooth = 20

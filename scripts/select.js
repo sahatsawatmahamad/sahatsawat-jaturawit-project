@@ -40,6 +40,84 @@ for (i = 0; i < l; i++) {
         }
       }
       h.click();
+      if (h.innerHTML == "jingle bells") {
+        console.log("1");
+        var jingleBell = [
+          "E1",
+          "E1",
+          "E1",
+          "E1",
+          "E1",
+          "E1",
+          "E1",
+          "G1",
+          "C1",
+          "D1",
+          "E1",
+          "F1",
+          "F1",
+          "F1",
+          "F1",
+          "E1",
+          "E1",
+          "E1",
+          "D1",
+          "D1",
+          "E1",
+          "D1",
+          "G1",
+        ];
+      } else if (h.innerHTML == "happy birthday") {
+        var jingleBell = [
+          "C1",
+          "C1",
+          "D1",
+          "C1",
+          "F1",
+          "E1",
+          "C1",
+          "C1",
+          "D1",
+          "C1",
+          "G1",
+          "F1",
+          "C1",
+          "C1",
+          "C2",
+          "A1",
+          "G1",
+          "E1",
+          "D1",
+        ];
+      }
+      test(0);
+      function test(index) {
+        
+        if (index >= jingleBell.length) {
+          console.log("win");
+          return;
+        } else {
+          var noteElement = document.getElementById(jingleBell[index]);
+          // let note_jing = jingleBell[k]
+          // console.log(noteElement);
+          noteElement.classList.add("tran");
+          noteElement.style.opacity = "1";
+          noteElement.addEventListener("click", function () {
+            // console.log(jingleBell[index]);
+            // console.log(noteElement.id);
+            if (noteElement.id == jingleBell[index]) {
+              noteElement.classList.remove("tran");
+              noteElement.style.opacity = "0.6";
+              console.log("match");
+              test(++index);
+            } else {
+              console.log(jingleBell[index]);
+              console.log(noteElement.id);
+              console.log("no");
+            }
+          });
+        }
+      }
     });
     b.appendChild(c);
   }
@@ -82,5 +160,3 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
-
-

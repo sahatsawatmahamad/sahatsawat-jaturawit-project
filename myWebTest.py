@@ -129,7 +129,7 @@ def gen():
 @app.route('/')
 def index():
     """Video streaming"""
-    return render_template('main.html')
+    return render_template('index.html')
 #     return render_template_string('''<html>
 # <head>
 #     <title>Video Test</title>

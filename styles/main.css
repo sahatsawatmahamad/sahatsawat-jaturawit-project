@@ -14,7 +14,7 @@ body {
   justify-content: center;
 }
 .key canvas {
-  width: 8%;
+  width: 6%;
   height: 300px;
   object-fit: none;
   border: white;
@@ -22,7 +22,7 @@ body {
   border-width: thin;
 }
 .keytype canvas {
-  width: 8%;
+  width: 6.1%;
   height: 650px;
   object-fit: none;
   border: none;

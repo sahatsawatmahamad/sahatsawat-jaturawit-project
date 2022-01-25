@@ -84,7 +84,7 @@ document.addEventListener("keyup", function (e) {
     document.getElementById("E2").classList.remove("tran");
   }
 });
-const keyList = ["C1", "D1", "E1", "F1", "G1", "A1", "B1", "C2", "D2", "E2"];
+const keyList = ["C1", "D1", "E1", "F1", "G1", "A1", "B1", "C2", "D2", "E2", "F2", "G2", "A2", "B2","C3"];
 keyList.forEach((key) => {
   var canvas = document.getElementById(key);
   var ctx = canvas.getContext("2d");
@@ -93,7 +93,7 @@ keyList.forEach((key) => {
   ctx.textAlign = "center";
   ctx.fillText(key, canvas.width / 2, canvas.height / 2);
 });
-const keyCode = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+const keyCode = ["Q", "W", "E", "R", "T", "Y", "U", "D", "F", "G","H","J","K","L","M"];
 keyCode.forEach((keytype) => {
   var canvastype = document.getElementById(keytype);
   var ctxtype = canvastype.getContext("2d");

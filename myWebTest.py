@@ -90,13 +90,13 @@ def gen():
                 cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
                 cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
                 cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+                cv2.circle(img, (a3, b3), 10, (0,
+255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
 
             # Click
             if fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 1:
                 autopy.mouse.click()
-
             # Click
             elif fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 0:
                 autopy.mouse.click()
@@ -111,8 +111,8 @@ def gen():
                 autopy.mouse.click()
                 print("ท่าที่2")
 
-
             elif fingers[0] == 1 and fingers[3] == 0:
+
                 autopy.mouse.click()
                 print("ท่าที่3")
 

@@ -71,43 +71,43 @@ body {
 #C1,
 #C2,
 #C3 {
-  background-color: purple;
+  background-color: #ECD5E3;
   opacity: 0.6;
 }
 #D1,
 #D2,
 #D3 {
-  background-color: skyblue;
+  background-color: #D4F0F0;
   opacity: 0.6;
 }
 #E1,
 #E2,
 #E3 {
-  background-color: blue;
+  background-color: #ABDEE6;
   opacity: 0.6;
 }
 #F1,
 #F2,
 #F3 {
-  background-color: green;
+  background-color: #CCE2CB;
   opacity: 0.6;
 }
 #G1,
 #G2,
 #G3 {
-  background-color: yellow;
+  background-color: #FFFFB5;
   opacity: 0.6;
 }
 #A1,
 #A2,
 #A3 {
-  background-color: orange;
+  background-color: #FFC8A2;
   opacity: 0.6;
 }
 #B1,
 #B2,
 #B3 {
-  background-color: red;
+  background-color: #FF968A;
   opacity: 0.6;
 }
 #C1:hover {
@@ -342,7 +342,7 @@ body {
 }
 
 .select-selected {
-  background-color: palevioletred;
+  background-color: #ffb3c6;
 }
 
 /*style the arrow inside the select element:*/
@@ -377,7 +377,7 @@ body {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: palevioletred;
+  background-color: #ffb3c6;
   top: 100%;
   left: 0;
   right: 0;

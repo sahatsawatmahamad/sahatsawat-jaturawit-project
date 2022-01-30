@@ -1,7 +1,7 @@
 
 /* CSS */
 .button62 {
-  background: linear-gradient(to bottom right, #EF4765, palevioletred);
+  background: linear-gradient(to bottom right, #EF4765, #ffb3c6);
   border: 0;
   border-radius: 12px;
   color: #FFFFFF;
@@ -31,5 +31,9 @@
 }
 .buttonblock{
   text-align: center;
+  
+}
+.settingform{
+  justify-content: space-evenly;
   
 }

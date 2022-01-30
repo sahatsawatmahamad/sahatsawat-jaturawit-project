@@ -38,7 +38,7 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="./main_keyboard.html">keyboard</a>
-        <a href="./main_onClick.html">Gamemode</a>
+        <a href= "{{ url_for('onClick') }}" >Gamemode</a>
         
 
     </div>
@@ -76,8 +76,10 @@
                 <input type="submit" value="play">
             </div>
             <div>
-        <h1 style="text-align:center">Image</h1>
-         <img style="text-align:center" id="img" src="{{ url_for('video_feed') }}">
+
+            <div id="camera">
+         <img   src="{{ url_for('video_feed') }}">
+            </div>
     </div>
             
         </form>

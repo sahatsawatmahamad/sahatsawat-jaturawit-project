@@ -22,6 +22,8 @@ def gen():
 
     wScr, hScr = autopy.screen.size()
     while True:
+
+
         ret, img0 = video_capture.read()
         img = cv2.flip(img0,1)
         img = detector.findHands(img)
@@ -121,27 +123,20 @@ def gen():
                 autopy.mouse.click()
                 print("ท่าที่4")
 
-        cv2.imwrite('t.jpg', img)
+        ret, buffer = cv2.imencode('.jpg', img)
+        img = buffer.tobytes()
         yield (b'--frame\r\n'
-           b'Content-Type: image/jpeg\r\n\r\n' + open('t.jpg', 'rb').read() + b'\r\n')
-    video_capture.release()
+               b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n')
 
 @app.route('/')
 def index():
     """Video streaming"""
     return render_template('index.html')
-#     return render_template_string('''<html>
-# <head>
-#     <title>Video Test</title>
-# </head>
-# <body>
-#     <div>
-#         <h1 style="text-align:center">Image</h1>
-#         <img style="text-align:center" id="img" src="{{ url_for('video_feed') }}">
-#     </div>
-#
-# </body>
-# </html>''')
+
+@app.route('/clicks')
+def onClick():
+
+    return render_template('click.html')
 
 @app.route('/video_feed')
 def video_feed():

@@ -12,16 +12,16 @@ function closeNav() {
 }
 
 var audios = [
-  "./static/js/sounds/piano_note/Music_Note/C.wav",
-  "./static/js/sounds/piano_note/Music_Note/D.wav",
-  "./static/js/sounds/piano_note/Music_Note/E.wav",
-  "./static/js/sounds/piano_note/Music_Note/F.wav",
-  "../static/js/sounds/piano_note/Music_Note/G.wav",
-  "./static/js/sounds/piano_note/Music_Note/A.wav",
-  "./static/js/sounds/piano_note/Music_Note/B.wav",
-  "./static/js/sounds/piano_note/Music_Note/C1.wav",
-  "./static/js/sounds/piano_note/Music_Note/D1.wav",
-  "./static/js/sounds/piano_note/Music_Note/E1.wav",
+  "./sounds/piano_note/Music_Note/C.wav",
+  "./sounds/piano_note/Music_Note/D.wav",
+  "./sounds/piano_note/Music_Note/E.wav",
+  "./sounds/piano_note/Music_Note/F.wav",
+  "./sounds/piano_note/Music_Note/G.wav",
+  "./sounds/piano_note/Music_Note/A.wav",
+  "./sounds/piano_note/Music_Note/B.wav",
+  "./sounds/piano_note/Music_Note/C1.wav",
+  "./sounds/piano_note/Music_Note/D1.wav",
+  "./sounds/piano_note/Music_Note/E1.wav",
 ];
 var specifics = document.querySelectorAll(".note");
 // function mouseOver() {

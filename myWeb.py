@@ -17,12 +17,9 @@ def gen():
     video_capture.set(3,wCam)
     video_capture.set(4, hCam)
 
-
-
-
     wScr, hScr = autopy.screen.size()
-    while True:
 
+    while True:
 
         ret, img0 = video_capture.read()
         img = cv2.flip(img0,1)
@@ -88,12 +85,7 @@ def gen():
 
                 autopy.mouse.move(cX, cY)
                 # autopy.mouse.move(clocX,clocY)
-                cv2.circle(img, (x2, y2), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                cv2.circle(img, (a3, b3), 10, (0,
-255, 0), cv2.FILLED)
+                cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
 
             # Click
@@ -108,7 +100,6 @@ def gen():
                 autopy.mouse.click()
                 print("ท่าที่1")
 
-
             elif fingers[0] == 1 and fingers[2] == 0:
                 autopy.mouse.click()
                 print("ท่าที่2")
@@ -118,8 +109,23 @@ def gen():
                 autopy.mouse.click()
                 print("ท่าที่3")
 
-
             elif fingers[0] == 1 and fingers[4] == 0:
+                autopy.mouse.click()
+                print("ท่าที่4")
+
+            elif fingers[0] == 0 and fingers[1] == 0:
+                autopy.mouse.click()
+                print("ท่าที่1")
+
+            elif fingers[0] == 0 and fingers[2] == 0:
+                autopy.mouse.click()
+                print("ท่าที่2")
+
+            elif fingers[0] == 0 and fingers[3] == 0:
+                autopy.mouse.click()
+                print("ท่าที่3")
+
+            elif fingers[0] == 0 and fingers[4] == 0:
                 autopy.mouse.click()
                 print("ท่าที่4")
 
@@ -128,15 +134,19 @@ def gen():
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n')
 
+
 @app.route('/')
 def index():
     """Video streaming"""
-    return render_template('index.html')
+    return render_template('main.html')
 
 @app.route('/clicks')
 def onClick():
+    return render_template('main_click.html')
 
-    return render_template('click.html')
+@app.route('/lesson')
+def lesson():
+    return render_template('lesson.html')
 
 @app.route('/video_feed')
 def video_feed():

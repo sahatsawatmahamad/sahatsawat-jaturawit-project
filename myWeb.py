@@ -74,7 +74,6 @@ def gen():
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
 
-
                 # print("นิวชี้")
                 # clocX = plocX +(x3-plocX) / smooth
                 # clocY = plocY + (x3 - plocY) / smooth
@@ -153,7 +152,6 @@ def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(gen(),
                 mimetype='multipart/x-mixed-replace; boundary=frame')
-
 
 if __name__ == '__main__':
     app.run()

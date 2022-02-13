@@ -2,7 +2,7 @@
   position: relative;
   left: 50%;
   top: 50%;
-  margin: -35px 0 0 -56px;
+  margin: 30px 0 0 -56px;
   width: 200px;
   height: 130px;
 }
@@ -345,4 +345,10 @@
   position: absolute;
   right: 45px;
   top: 150px;
+}
+.buttonblock{
+  display: flex;
+  margin-top: 25px;
+  height: 50%;
+  width: 18%;
 }

@@ -35,7 +35,8 @@ function Easy() {
     var timer = window.setInterval(countItDown, 1000);
   } else if (hand == "1") {
     var countdown = document.getElementById("countdown");
-
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/AUC-UzcUu6w?autoplay=1&mute=1";
     var countItDown = function () {
       var currentTime = parseFloat(countdown.textContent);
       if (currentTime >= 20) {
@@ -55,7 +56,8 @@ function Easy() {
       "finger-6-animation 10s infinite linear";
   } else if (hand == "2") {
     var countdown = document.getElementById("countdown");
-
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/rF2Xtr_1TX0?autoplay=1&mute=1";
     var countItDown = function () {
       var currentTime = parseFloat(countdown.textContent);
       if (currentTime >= 20) {

@@ -1,3 +1,5 @@
+import time
+
 import cv2
 from flask import Flask, render_template, render_template_string, Response
 import HandTrackingModule as htm
@@ -10,7 +12,7 @@ video_capture = cv2.VideoCapture(0)
 def gen():
     detector = htm.handDetector(maxHands=1)
     wCam, hCam = 320, 240
-    frameR = 50
+    frameR = 75
     plocX, plocY = 0, 0
     clocX, clocY = 0, 0
 
@@ -32,7 +34,6 @@ def gen():
             a2, b2 = lmList[16][1:]
             a3, b3 = lmList[20][1:]
             landmark9_1, landmark9_2 = lmList[9][1:]
-
             #
             fingers = detector.fingersUp()
 
@@ -48,16 +49,14 @@ def gen():
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
 
-
-                # print("นิวชี้")
-                # clocX = plocX +(x3-plocX) / smooth
-                # clocY = plocY + (x3 - plocY) / smooth
+                clocX = plocX + (lanmark9x - plocX) / 5
+                clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 
-                cX = plocX + (lanmark9x - plocX) * 0.999999999
-                cY = plocY + (lanmark9y - plocY) * 0.999999999
+                # cX = plocX + (lanmark9x - plocX) * 0.999999999
+                # cY = plocY + (lanmark9y - plocY) * 0.999999999
 
-                autopy.mouse.move(cX, cY)
+                autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
                 # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
@@ -75,64 +74,78 @@ def gen():
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
 
                 # print("นิวชี้")
-                # clocX = plocX +(x3-plocX) / smooth
-                # clocY = plocY + (x3 - plocY) / smooth
+                clocX = plocX +(lanmark9x-plocX) / 5
+                clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 #-------------------------------------------------
-                cX = plocX + (lanmark9x - plocX) * 0.999999999
-                cY = plocY + (lanmark9y - plocY) * 0.999999999
+                # cX = plocX + (lanmark9x - plocX) * 0.999999999
+                # cY = plocY + (lanmark9y - plocY) * 0.999999999
 
-                autopy.mouse.move(cX, cY)
+                autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
 
             # Click
             if fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 1:
+                time.sleep(0.2)
                 autopy.mouse.click()
             # Click
             elif fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0 and fingers[0] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
-
 
             elif fingers[0] == 1 and fingers[1] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
+
                 print("ท่าที่1")
 
             elif fingers[0] == 1 and fingers[2] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
+
                 print("ท่าที่2")
 
             elif fingers[0] == 1 and fingers[3] == 0:
+                time.sleep(0.2)
 
                 autopy.mouse.click()
                 print("ท่าที่3")
 
             elif fingers[0] == 1 and fingers[4] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
                 print("ท่าที่4")
 
             elif fingers[0] == 0 and fingers[1] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
-                print("ท่าที่1")
+
+                print("ท่าที่5")
 
             elif fingers[0] == 0 and fingers[2] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
-                print("ท่าที่2")
+
+                print("ท่าที่6")
 
             elif fingers[0] == 0 and fingers[3] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
-                print("ท่าที่3")
+
+                print("ท่าที่7")
 
             elif fingers[0] == 0 and fingers[4] == 0:
+                time.sleep(0.2)
                 autopy.mouse.click()
-                print("ท่าที่4")
+
+                print("ท่าที่8")
 
         ret, buffer = cv2.imencode('.jpg', img)
         img = buffer.tobytes()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n')
-
 
 @app.route('/')
 def index():

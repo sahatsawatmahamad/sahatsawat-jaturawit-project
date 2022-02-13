@@ -13,7 +13,6 @@
 
 </head>
 
-
 <body>
 
     <div>
@@ -71,13 +70,14 @@
                 </div>
 
             </div>
+            <div id="camera">
+         <img id ='camera_img' style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
+            </div>
 
 
         </form>
 
-        <div id="camera">
-         <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
-            </div>
+
     </div>
     <div class="piano">
         <div class="keytype">

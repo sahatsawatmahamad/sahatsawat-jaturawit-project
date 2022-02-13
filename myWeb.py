@@ -11,7 +11,7 @@ video_capture = cv2.VideoCapture(0)
 
 def gen():
     detector = htm.handDetector(maxHands=1)
-    wCam, hCam = 320, 240
+    wCam, hCam = 160, 120
     frameR = 75
     plocX, plocY = 0, 0
     clocX, clocY = 0, 0
@@ -154,11 +154,15 @@ def index():
 
 @app.route('/clicks')
 def onClick():
-    return render_template('main_click.html')
+    return render_template('main_onClick.html')
 
 @app.route('/lesson')
 def lesson():
     return render_template('lesson.html')
+
+@app.route('/keyboard')
+def keyboard():
+    return render_template('main_keyboard.html')
 
 @app.route('/video_feed')
 def video_feed():

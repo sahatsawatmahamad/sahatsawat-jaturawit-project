@@ -339,7 +339,6 @@ def genringfinger():
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 0:
                 # ปลายนิ้วกลาง
 
-
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
@@ -347,7 +346,6 @@ def genringfinger():
                 clocX = plocX + (lanmark9x - plocX) / 5
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
-
 
                 autopy.mouse.move(clocX, clocY)
 
@@ -433,7 +431,6 @@ def genlittlefinger():
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
 
-
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
@@ -465,6 +462,11 @@ def genlittlefinger():
 
 @app.route('/')
 def index():
+    """Video streaming"""
+    return render_template('main.html')
+
+@app.route('/main')
+def main():
     """Video streaming"""
     return render_template('main.html')
 

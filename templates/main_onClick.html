@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual instrument</title>
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}" >
+     <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -30,59 +31,57 @@
         </ul>
     </div>
 
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url_for('keyboard') }}">keyboard</a>
-        <a href="{{ url_for('onClick') }}">Gamemode</a>
-        <a href="{{ url_for('lesson') }}">Lesson</a>
 
-    </div>
-    <div id="main">
-        <button class="openbtn" onclick="openNav()">&#9776; Choose mode</button>
-    </div>
     <div class="title">
-        <p id="appTitle">Visual Instrument</p>
+        <p id="appTitle">Hand Therapy</p>
     </div>
-    <div class="settingform">
-
-        <div class="set">
-            <div class="custom-select" id="set1" style="width:200px;">
-                <select name="sound" id="sound">
-                    <option value="sound">Select sound:</option>
-                    <option value="piano">Piano</option>
-                    <option value="guitar">Guitar</option>
-                    <option value="bass">Bass</option>
-                </select>
-
-            </div>
-
-            <div class="custom-select" id="set2" style="width:200px;">
-                <select name="hand" id="hand">
-                    <option value="hand">Select hand:</option>
-                    <option value="0">กำมือ</option>
-                    <option value="1">ไล่นิ้วชี้</option>
-                    <option value="2">ไล่นิ้วกลาง</option>
-                    <option value="3">ไล่นิ้วนาง</option>
-                    <option value="4">ไล่นิ้วก้อย</option>
-                </select>
-            </div>
-
-            <div class="custom-select" id="set3" style="width:200px;">
-                <select name="song" id="song"onchange="song()" >
-                    <option value="song">Select song:</option>
-                    <option value="jinglebell">jingle bells</option>
-                    <option value="HBD">happy birthday</option>
-                </select>
-            </div>
-            <!-- <button onclick="song()">play</button> -->
+    <div class="option">
+        <div class="selectpage">
+            <p id="pageicon">
+                <a class="material-icons md-48" href="{{('main')}}" style="color: white;">mouse</a>
+                <a class="material-icons md-48" href="{{('keyboard') }}" style="color: white;">keyboard</a>
+                <a class="material-icons md-48" href="{{('clicks')}}" style="color: white;">sports_esports</a>
+                <a class="material-icons md-48" href="{{('lesson')}}" style="color: white;">waving_hand</a>
+            </p>
         </div>
+        <div class="settingform">
+
+            <div class="set">
+                <div class="custom-select" id="set1" style="width:200px;">
+                    <select name="sound" id="sound">
+                        <option value="sound">Select sound:</option>
+                        <option value="piano">Piano</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="bass">Bass</option>
+                    </select>
+
+                </div>
+
+                <div class="custom-select" id="set2" style="width:200px;">
+                    <select name="hand" id="hand">
+                        <option value="hand">Select hand:</option>
+                        <option value="0">กำมือ</option>
+                        <option value="1">ไล่นิ้วชี้</option>
+                        <option value="2">ไล่นิ้วกลาง</option>
+                        <option value="3">ไล่นิ้วนาง</option>
+                        <option value="4">ไล่นิ้วก้อย</option>
+                    </select>
+                </div>
+
+                <div class="custom-select" id="set3" style="width:200px;">
+                    <select name="song" id="song"onchange="song()" >
+                        <option value="song">Select song:</option>
+                        <option value="jinglebell">jingle bells</option>
+                        <option value="HBD">happy birthday</option>
+                    </select>
+                </div>
+                <!-- <button onclick="song()">play</button> -->
+            </div>
 
 
+        </div>
     </div>
 
-    <div id="camera">
-         <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
-            </div>
 
     <p id="demo"style="color: white;"></p>
     <div class="piano">
@@ -126,8 +125,6 @@
     <script src="{{url_for('static', filename='js/tone_onclick.js')}}"></script>
     <script src="{{url_for('static', filename='js/click.js')}}"></script>
     <script src="{{url_for('static', filename='js/select.js')}}"></script>
-
-
 </body>
 
 </html>

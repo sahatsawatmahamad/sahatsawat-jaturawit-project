@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/ed68eac77c.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -30,71 +31,78 @@
         </ul>
     </div>
 
-    <div id="mySidebar" class="sidebar">
+    <!-- <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url_for('keyboard') }}">keyboard</a>
-        <a href="{{ url_for('onClick') }}">Gamemode</a>
-        <a href="{{ url_for('lesson') }}">Lesson</a>
+        <a href="./main_keyboard.html">keyboard</a>
+        <a href="./main_onClick.html">Gamemode</a>
+        <a href="./lesson.html">Lesson</a>
 
 
     </div>
 
     <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776; Choose mode</button>
-    </div>
+    </div> -->
     <div class="title">
-        <p id="appTitle">Visual Instrument</p>
+        <p id="appTitle">Hand Therapy</p>
     </div>
-    <div class="settingform">
-        <form>
-            <div class="set">
-                <div class="custom-select" id="set"style="width:200px;">
-                    <select name="sound" id="sound">
-                        <option value="sound">Select sound:</option>
-                        <option value="piano">Piano</option>
-                        <option value="guitar">Guitar</option>
-                        <option value="bass">Bass</option>
-                    </select>
-
+    <div class="option">
+        <div class="selectpage">
+            <p id="pageicon">
+                <a class="material-icons md-48" href="{{('main')}}" style="color: white;">mouse</a>
+                <a class="material-icons md-48" href="{{('keyboard')}}" style="color: white;">keyboard</a>
+                <a class="material-icons md-48" href="{{('clicks')}}" style="color: white;">sports_esports</a>
+                <a class="material-icons md-48" href="{{('lesson')}}" style="color: white;">waving_hand</a>
+            </p>
+        </div>
+        <div class="settingform">
+            <form>
+                <div class="set">
+                    <div class="custom-select" id="set" style="width:200px;">
+                        <select name="sound" id="sound">
+                            <option value="sound">Select sound:</option>
+                            <option value="piano">Piano</option>
+                            <option value="guitar">Guitar</option>
+                            <option value="bass">Bass</option>
+                        </select>
+                    </div>
+                    <div class="custom-select" id="set" style="width:200px;">
+                        <select name="hand" id="hand">
+                            <option value="hand">Select hand:</option>
+                            <option value="0">กำมือ</option>
+                            <option value="1">ไล่นิ้วชี้</option>
+                            <option value="2">ไล่นิ้วกลาง</option>
+                            <option value="3">ไล่นิ้วนาง</option>
+                            <option value="4">ไล่นิ้วก้อย</option>
+                        </select>
+                    </div>
                 </div>
+            </form>
+        </div>
+    </div>
 
-                <div class="custom-select" id="set"style="width:200px;">
-                    <select name="hand" id="hand">
-                        <option value="hand">Select hand:</option>
-                        <option value="0">กำมือ</option>
-                        <option value="1">ไล่นิ้วชี้</option>
-                        <option value="2">ไล่นิ้วกลาง</option>
-                        <option value="3">ไล่นิ้วนาง</option>
-                        <option value="4">ไล่นิ้วก้อย</option>
-                    </select>
-                </div>
-
-            </div>
-            <div id="camera">
-         <img id ='camera_img' style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
-            </div>
-        </form>
-
+    <div id="camera">
+        <img id="camera_img" style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
     </div>
     <div class="piano">
-        <div class="keytype">
-            <canvas id="Q"></canvas>
-            <canvas id="W"></canvas>
-            <canvas id="E"></canvas>
-            <canvas id="R"></canvas>
-            <canvas id="T"></canvas>
-            <canvas id="Y"></canvas>
-            <canvas id="U"></canvas>
-            <canvas id="D"></canvas>
-            <canvas id="F"></canvas>
-            <canvas id="G"></canvas>
-            <canvas id="H"></canvas>
-            <canvas id="J"></canvas>
-            <canvas id="K"></canvas>
-            <canvas id="L"></canvas>
-            <canvas id="M"></canvas>
+<!--        <div class="keytype">-->
+<!--            <canvas id="Q"></canvas>-->
+<!--            <canvas id="W"></canvas>-->
+<!--            <canvas id="E"></canvas>-->
+<!--            <canvas id="R"></canvas>-->
+<!--            <canvas id="T"></canvas>-->
+<!--            <canvas id="Y"></canvas>-->
+<!--            <canvas id="U"></canvas>-->
+<!--            <canvas id="D"></canvas>-->
+<!--            <canvas id="F"></canvas>-->
+<!--            <canvas id="G"></canvas>-->
+<!--            <canvas id="H"></canvas>-->
+<!--            <canvas id="J"></canvas>-->
+<!--            <canvas id="K"></canvas>-->
+<!--            <canvas id="L"></canvas>-->
+<!--            <canvas id="M"></canvas>-->
 
-        </div>
+<!--        </div>-->
         <div class="key">
             <canvas class="note" id="C1"></canvas>
             <canvas class="note" id="D1"></canvas>

@@ -48,7 +48,7 @@ keyCode.forEach((keytype) => {
   ctxtype.font = "30px Arial";
   ctxtype.fillStyle = "white";
   ctxtype.textAlign = "center";
-  ctxtype.fillText(keytype, canvastype.width / 2, canvastype.height / 2);
+  ctxtype.fillText(keytype, canvastype.width / 2, canvastype.height/2);
 });
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {

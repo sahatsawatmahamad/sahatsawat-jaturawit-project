@@ -1,3 +1,9 @@
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px;text-decoration:none; }
+
+
 body {
   background-color: black;
   /* background-color: #222222; */
@@ -28,6 +34,7 @@ body {
   border: none;
   border-style: none;
   border-width: thin;
+  z-index: -100;
 }
 .keytype {
   display: flex;
@@ -396,9 +403,26 @@ body {
 .set{
     display: flex;
     justify-content: center;
-    
 }
 .settingform{
+  height: 50%;
   display: flex;
   justify-content: center;
+  margin-top: 25px;
+}
+.option{
+  display: flex;
+  justify-content: space-evenly;
+}
+.selectpage{
+  width: 400px;
+}
+#pageicon{
+  display: flex;
+  justify-content: space-evenly;
+}
+iframe {
+  display: block;
+  margin: 0 auto;
+  
 }

@@ -181,7 +181,6 @@ def genindexfinger():
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 0:
                 # ปลายนิ้วกลาง
 
-
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
@@ -190,21 +189,12 @@ def genindexfinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
-
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
-                # ปลายนิ้วกลาง
-                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
 
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
@@ -215,8 +205,7 @@ def genindexfinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
                 # -------------------------------------------------
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
+
 
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
@@ -279,21 +268,12 @@ def genmiddlefinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
-
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
-                # ปลายนิ้วกลาง
-                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
 
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
@@ -304,8 +284,7 @@ def genmiddlefinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
                 # -------------------------------------------------
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
+
 
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
@@ -369,21 +348,13 @@ def genringfinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
 
                 autopy.mouse.move(clocX, clocY)
-                # autopy.mouse.move(clocX,clocY)
+
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
-                # ปลายนิ้วกลาง
-                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
 
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
@@ -394,8 +365,6 @@ def genringfinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
                 # -------------------------------------------------
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
 
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
@@ -403,7 +372,6 @@ def genringfinger():
                 plocX, plocY = clocX, clocY
 
             # Click
-
 
             if fingers[0] == 1 and fingers[3] == 0:
                 time.sleep(0.2)
@@ -416,10 +384,6 @@ def genringfinger():
         img = buffer.tobytes()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n')
-
-
-
-
 
 def genlittlefinger():
     detector = htm.handDetector(maxHands=1)
@@ -454,7 +418,6 @@ def genlittlefinger():
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 0:
                 # ปลายนิ้วกลาง
 
-
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
                 lanmark9y = np.interp(landmark9_2, (frameR, hCam - frameR), (0, hScr))
@@ -463,21 +426,13 @@ def genlittlefinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
 
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
-
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
                 cv2.circle(img, (landmark9_1, landmark9_2), 5, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (x1, y1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a1, b1), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a2, b2), 10, (0, 255, 0), cv2.FILLED)
-                # cv2.circle(img, (a3, b3), 10, (0, 255, 0), cv2.FILLED)
+
                 plocX, plocY = clocX, clocY
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1 and fingers[0] == 1:
-                # ปลายนิ้วกลาง
-                # x3 = np.interp(x2, (frameR, wCam - frameR), (0, wScr))
-                # y3 = np.interp(y2, (frameR, hCam - frameR), (0, hScr))
+
 
                 # แลนมาคที่9
                 lanmark9x = np.interp(landmark9_1, (frameR, wCam - frameR), (0, wScr))
@@ -488,8 +443,6 @@ def genlittlefinger():
                 clocY = plocY + (lanmark9y - plocY) / 5
                 # ขยับเมาส์
                 # -------------------------------------------------
-                # cX = plocX + (lanmark9x - plocX) * 0.999999999
-                # cY = plocY + (lanmark9y - plocY) * 0.999999999
 
                 autopy.mouse.move(clocX, clocY)
                 # autopy.mouse.move(clocX,clocY)
@@ -497,7 +450,6 @@ def genlittlefinger():
                 plocX, plocY = clocX, clocY
 
             # Click
-
 
             if fingers[0] == 1 and fingers[4] == 0:
                 time.sleep(0.2)
@@ -510,7 +462,6 @@ def genlittlefinger():
         img = buffer.tobytes()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n')
-
 
 @app.route('/')
 def index():

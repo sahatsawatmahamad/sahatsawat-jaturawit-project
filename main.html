@@ -70,7 +70,7 @@
                         <select name="hand" id="hand">
                             <option value="hand">Select hand:</option>
                             <option value="0">กำมือ</option>
-                            <option value="1"></option>
+                            <option value="1">ไล่นิ้วชี้</option>
                             <option value="2">ไล่นิ้วกลาง</option>
                             <option value="3">ไล่นิ้วนาง</option>
                             <option value="4">ไล่นิ้วก้อย</option>
@@ -81,7 +81,8 @@
         </div>
     </div>
     <div id="camera">
-        <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"  src="{{ url_for('video_feed') }}">
+        <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"
+            src="{{ url_for('video_feed') }}">
     </div>
     <div class="piano">
         <div class="keytype">

@@ -1,15 +1,20 @@
 
 var audios = [
-  "./sounds/piano_note/Music_Note/C.wav",
-  "./sounds/piano_note/Music_Note/D.wav",
-  "./sounds/piano_note/Music_Note/E.wav",
-  "./sounds/piano_note/Music_Note/F.wav",
-  "./sounds/piano_note/Music_Note/G.wav",
-  "./sounds/piano_note/Music_Note/A.wav",
-  "./sounds/piano_note/Music_Note/B.wav",
-  "./sounds/piano_note/Music_Note/C1.wav",
-  "./sounds/piano_note/Music_Note/D1.wav",
-  "./sounds/piano_note/Music_Note/E1.wav",
+  "./sounds/piano_note/note_complete/C3.mp3",
+  "./sounds/piano_note/note_complete/D3.mp3",
+  "./sounds/piano_note/note_complete/E3.mp3",
+  "./sounds/piano_note/note_complete/F3.mp3",
+  "./sounds/piano_note/note_complete/G3.mp3",
+  "./sounds/piano_note/note_complete/A3.mp3",
+  "./sounds/piano_note/note_complete/B3.mp3",
+  "./sounds/piano_note/note_complete/C4.mp3",
+  "./sounds/piano_note/note_complete/D4.mp3",
+  "./sounds/piano_note/note_complete/E4.mp3",
+  "./sounds/piano_note/note_complete/F4.mp3",
+  "./sounds/piano_note/note_complete/G4.mp3",
+  "./sounds/piano_note/note_complete/A4.mp3",
+  "./sounds/piano_note/note_complete/B4.mp3",
+  "./sounds/piano_note/note_complete/C5.mp3",
 ];
 var specifics = document.querySelectorAll(".note");
 // function mouseOver() {
@@ -51,17 +56,6 @@ keyCode.forEach((keytype) => {
   ctxtype.fillText(keytype, canvastype.width / 2, canvastype.height/2);
 });
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "180px";
-  document.getElementById("main").style.marginLeft = "180px";
-  // const synth = new Tone.Synth().toDestination();
-  // synth.triggerAttackRelease("C4", "8n");
-}
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
 
 

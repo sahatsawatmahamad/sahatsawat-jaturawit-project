@@ -1,36 +1,20 @@
-
-var audios = [
-  "./sounds/piano_note/note_complete/C3.mp3",
-  "./sounds/piano_note/note_complete/D3.mp3",
-  "./sounds/piano_note/note_complete/E3.mp3",
-  "./sounds/piano_note/note_complete/F3.mp3",
-  "./sounds/piano_note/note_complete/G3.mp3",
-  "./sounds/piano_note/note_complete/A3.mp3",
-  "./sounds/piano_note/note_complete/B3.mp3",
-  "./sounds/piano_note/note_complete/C4.mp3",
-  "./sounds/piano_note/note_complete/D4.mp3",
-  "./sounds/piano_note/note_complete/E4.mp3",
-  "./sounds/piano_note/note_complete/F4.mp3",
-  "./sounds/piano_note/note_complete/G4.mp3",
-  "./sounds/piano_note/note_complete/A4.mp3",
-  "./sounds/piano_note/note_complete/B4.mp3",
-  "./sounds/piano_note/note_complete/C5.mp3",
-];
-var specifics = document.querySelectorAll(".note");
-// function mouseOver() {
-//     soundC1.play();
-
-// }
-for (i = 0; i < specifics.length; i++) {
-  var specific = specifics[i];
-
-  let audio = document.createElement("audio");
-  audio.src = audios[i];
-  document.body.appendChild(audio);
-  specific.onclick = () => {
-    audio.currentTime = 0.225;
-    audio.play();
-  };
+function noteDown(elem) {
+  var instrument = document.getElementById("sound").value;
+  if (instrument == "piano") {
+    const synth = new Tone.Synth().toDestination();
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "kalimba"){
+    const synth = new Tone.AMSynth().toDestination();
+    synth.volume.value = 5;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "bass"){
+    const synth = new Tone.DuoSynth().toDestination();
+    synth.volume.value = -10;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }
 }
 const keyList = ["C1", "D1", "E1", "F1", "G1", "A1", "B1", "C2", "D2", "E2", "F2", "G2", "A2", "B2","C3"];
 keyList.forEach((key) => {

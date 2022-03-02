@@ -59,10 +59,10 @@
             <form>
                 <div class="set">
                     <div class="custom-select" id="set" style="width:200px;">
-                        <select name="sound" id="sound">
-                            <option value="sound">Select sound:</option>
+                        <select name="sound" id="sound" >
+                            <option value="sound" >Select sound:</option>
                             <option value="piano">Piano</option>
-                            <option value="guitar">Guitar</option>
+                            <option value="kalimba">Kalimba</option>
                             <option value="bass">Bass</option>
                         </select>
                     </div>
@@ -79,6 +79,7 @@
                 </div>
             </form>
         </div>
+        
     </div>
     <div id="camera">
         <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"
@@ -104,24 +105,24 @@
 
         </div>
         <div class="key">
-            <canvas class="note" id="C1"></canvas>
-            <canvas class="note" id="D1"></canvas>
-            <canvas class="note" id="E1"></canvas>
-            <canvas class="note" id="F1"></canvas>
-            <canvas class="note" id="G1"></canvas>
-            <canvas class="note" id="A1"></canvas>
-            <canvas class="note" id="B1"></canvas>
-            <canvas class="note" id="C2"></canvas>
-            <canvas class="note" id="D2"></canvas>
-            <canvas class="note" id="E2"></canvas>
-            <canvas class="note" id="F2"></canvas>
-            <canvas class="note" id="G2"></canvas>
-            <canvas class="note" id="A2"></canvas>
-            <canvas class="note" id="B2"></canvas>
-            <canvas class="note" id="C3"></canvas>
+            <canvas class="note" id="C1" data-note="C3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="D1" data-note="D3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="E1" data-note="E3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="F1" data-note="F3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="G1" data-note="G3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="A1" data-note="A3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="B1" data-note="B3" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="C2" data-note="C4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="D2" data-note="D4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="E2" data-note="E4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="F2" data-note="F4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="G2" data-note="G4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="A2" data-note="A4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="B2" data-note="B4" onmouseover="noteDown(this)"></canvas>
+            <canvas class="note" id="C3" data-note="C5" onmouseover="noteDown(this)"></canvas>
         </div>
     </div>
-
+    <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/select.js"></script>
     <script>

@@ -1,21 +1,40 @@
 function noteDown(elem) {
   var instrument = document.getElementById("sound").value;
-  if (instrument == "piano") {
+  if (instrument == "Synth"|| instrument == "sound") {
     const synth = new Tone.Synth().toDestination();
     var note = elem.dataset.note;
     synth.triggerAttackRelease(note, "16n");
-  }else if (instrument == "kalimba"){
+  }else if (instrument == "AMSynth"){
     const synth = new Tone.AMSynth().toDestination();
     synth.volume.value = 5;
     var note = elem.dataset.note;
     synth.triggerAttackRelease(note, "16n");
-  }else if (instrument == "bass"){
+  }else if (instrument == "DuoSynth"){
     const synth = new Tone.DuoSynth().toDestination();
     synth.volume.value = -10;
     var note = elem.dataset.note;
     synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "FMSynth"){
+    const synth = new Tone.FMSynth().toDestination();
+    synth.volume.value = 5;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "MembraneSynth"){
+    const synth = new Tone.MembraneSynth().toDestination();
+    synth.volume.value = 0;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
   }
 }
+Howtoplay();
+function Howtoplay() {
+  Swal.fire({
+    title: "<i>HOW TO PLAY</i>",
+    html: "1.Play with <b>Mouse Click</b>.<br><br>2.You can change <b>Sound, Type of Hand </b>and <b>Songs</b><br><br>3.Let's play!!!",
+    confirmButtonText: "<u>got it.</u>",
+  });
+}
+
 const keyList = ["C1", "D1", "E1", "F1", "G1", "A1", "B1", "C2", "D2", "E2", "F2", "G2", "A2", "B2","C3"];
 keyList.forEach((key) => {
   var canvas = document.getElementById(key);

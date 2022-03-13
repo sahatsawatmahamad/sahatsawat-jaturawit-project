@@ -1,3 +1,4 @@
+Howtoplay();
 function Easy() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
@@ -397,5 +398,12 @@ function alertwinhard() {
     title: "<i>Excellent!!</i>",
     html: "You pass level: <b>Hard</b>",
     confirmButtonText: "<u>done</u>",
+  });
+}
+function Howtoplay() {
+  Swal.fire({
+    title: "<i>HOW TO PLAY</i>",
+    html: "1.Choose type of Hand Therapy.<br><br>2.Choose level.<br><br> <b>Easy</b> 20 Seconds\n <b>Normal</b> 40 Seconds\n <b>Hard</b> 60 Seconds<br><br>3.Learn Hand Therapy from video and start.",
+    confirmButtonText: "<u>got it.</u>",
   });
 }

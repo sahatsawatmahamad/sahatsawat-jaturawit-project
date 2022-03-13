@@ -11,11 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
 
 
-<body >
+<body>
 
 
     <div>
@@ -41,7 +41,7 @@
         <div class="selectpage">
             <p id="pageicon">
                 <a class="material-icons md-48" href="./main.html" style="color: white;">mouse</a>
-                <a class="material-icons md-48" href="./main_keyboard.html" style="color: white;">keyboard</a>
+                <a class="material-icons md-48" href="./main_keyboard.html" style="color: white;text-decoration: underline #ff8ca9 3px;">keyboard</a>
                 <a class="material-icons md-48" href="./main_onClick.html" style="color: white;">sports_esports</a>
                 <a class="material-icons md-48" href="./lesson.html" style="color: white;">waving_hand</a>
             </p>
@@ -49,21 +49,23 @@
         <div class="settingform">
             <form>
                 <div class="set">
-                    <div class="custom-select" id="set"style="width:200px;">
+                    <div class="custom-select" id="set" style="width:200px;">
                         <select name="sound" id="sound">
-                            <option value="sound" >Select sound:</option>
-                            <option value="piano">Piano</option>
-                            <option value="kalimba">Kalimba</option>
-                            <option value="bass">Bass</option>
+                            <option value="sound">Select sound:</option>
+                            <option value="Synth">Synth</option>
+                            <option value="AMSynth">AMSynth</option>
+                            <option value="DuoSynth">DuoSynth</option>
+                            <option value="FMSynth">FMSynth</option>
+                            <option value="MembraneSynth">MembraneSynth</option>
                         </select>
-                        
+
                     </div>
                 </div>
-                
+
             </form>
         </div>
     </div>
-    
+
     <div class="piano">
         <div class="keytype">
             <canvas id="Q"></canvas>
@@ -101,10 +103,11 @@
             <canvas class="note" id="C3"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./scripts/tons.js"></script>
     <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script src="./scripts/select.js"></script>
-
+    
 
 </body>
 

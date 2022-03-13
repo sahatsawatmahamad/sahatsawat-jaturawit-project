@@ -57,7 +57,7 @@ body {
   margin-top: 0;
   line-height: 1;
   text-decoration: none;
-  color: #228dff;
+  color: #ff8ca9;
   font-family: "Iceland";
   text-shadow: 2px 0 0 #fff;
 }
@@ -67,12 +67,12 @@ body {
 }
 @keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
-      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff8ca9,
+      0 0 70px #ff8ca9, 0 0 80px #ff8ca9, 0 0 100px #ff8ca9, 0 0 150px #ff8ca9;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
-      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff8ca9,
+      0 0 35px #ff8ca9, 0 0 40px #ff8ca9, 0 0 50px #ff8ca9, 0 0 75px #ff8ca9;
   }
 }
 #C1,
@@ -367,7 +367,7 @@ body {
 }
 
 .select-selected {
-  background-color: #ffb3c6;
+  background-color: #ff8ca9;
 }
 
 /*style the arrow inside the select element:*/
@@ -402,7 +402,7 @@ body {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: #ffb3c6;
+  background-color: #ff8ca9;
   top: 100%;
   left: 0;
   right: 0;
@@ -451,7 +451,7 @@ iframe {
   width: 18%;
 }
 .button62 {
-  background: linear-gradient(to bottom right, #EF4765, #ffb3c6);
+  background: linear-gradient(to bottom right, #EF4765, #ff8ca9);
   border: 0;
   border-radius: 12px;
   color: #FFFFFF;

@@ -1,13 +1,20 @@
+
 document.addEventListener("keydown", function (e) {
   var instrument = document.getElementById("sound").value;
-  if (instrument == "piano") {
+  if (instrument == "Synth" || instrument == "sound" ) {
     var synth = new Tone.Synth().toDestination();
-  }else if (instrument == "kalimba"){
+  }else if (instrument == "AMSynth"){
     var synth = new Tone.AMSynth().toDestination();
     synth.volume.value = 5;
-  }else if (instrument == "bass"){
+  }else if (instrument == "DuoSynth"){
     var synth = new Tone.DuoSynth().toDestination();
     synth.volume.value = -10;
+  }else if (instrument == "FMSynth"){
+    var synth = new Tone.FMSynth().toDestination();
+    synth.volume.value = 5;
+  }else if (instrument == "MembraneSynth"){
+    var synth = new Tone.MembraneSynth().toDestination();
+    synth.volume.value = 0;
   }
   if (e.keyCode == 81) {
     synth.triggerAttackRelease("C3", "16n");
@@ -155,4 +162,12 @@ keyCode.forEach((keytype) => {
 function setting(){
   document.getElementById("settingform").style.width = "180px";
   document.getElementById("settingform").style.height = "180px";
+}
+Howtoplay();
+function Howtoplay() {
+  Swal.fire({
+    title: "<i>HOW TO PLAY</i>",
+    html: "1.Play with <b>KeyType</b>.<br><br>2.You can change <b>sound.</b><br><br>3.Let's play!!!",
+    confirmButtonText: "<u>got it.</u>",
+  });
 }

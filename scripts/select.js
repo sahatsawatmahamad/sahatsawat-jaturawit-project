@@ -95,6 +95,84 @@ for (i = 0; i < l; i++) {
           "D2",
           "C2",
         ];
+      }else if (h.innerHTML == "merry christmas") {
+        var jingleBell = [
+          "G1",
+          "C2",
+          "C2",
+          "D2",
+          "C2",
+          "B1",
+          "A1",
+          "A1",
+          "A1",
+          "D2",
+          "D2",
+          "E2",
+          "D2",
+          "C2",
+          "B1",
+          "G1",
+          "G1",
+          "E2",
+          "E2",
+          "F2",
+          "E2",
+          "D2",
+          "C2",
+          "A1",
+          "G1",
+          "G1",
+          "A1",
+          "D2",
+          "B1",
+          "C2",
+        ];
+      }else if (h.innerHTML == "twinkle little star") {
+        var jingleBell = [
+          "C2",
+          "C2",
+          "G2",
+          "G2",
+          "A2",
+          "A2",
+          "G2",
+          "F2",
+          "F2",
+          "E2",
+          "E2",
+          "D2",
+          "D2",
+          "C2",
+          "G2",
+          "G2",
+          "F2",
+          "F2",
+          "E2",
+          "E2",
+          "D2",
+          "G2",
+          "G2",
+          "F2",
+          "F2",
+          "E2",
+          "E2",
+          "D2",
+          "C2",
+          "C2",
+          "G2",
+          "G2",
+          "A2",
+          "A2",
+          "G2",
+          "F2",
+          "F2",
+          "E2",
+          "E2",
+          "D2",
+          "D2",
+          "C2",
+        ];
       }
       test(0);
       function test(index) {
@@ -114,7 +192,7 @@ for (i = 0; i < l; i++) {
             if (noteElement.id == jingleBell[index]) {
               noteElement.classList.remove("tran");
               noteElement.style.opacity = "0.6";
-              console.log("match");
+              // console.log("match");
               test(++index);
             } else {
               console.log(jingleBell[index]);

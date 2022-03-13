@@ -31,7 +31,7 @@
         </ul>
     </div>
 
-    
+
     <div class="title">
         <p id="appTitle">Hand Therapy</p>
     </div>
@@ -40,7 +40,7 @@
             <p id="pageicon">
                 <a class="material-icons md-48" href="./main.html" style="color: white;">mouse</a>
                 <a class="material-icons md-48" href="./main_keyboard.html" style="color: white;">keyboard</a>
-                <a class="material-icons md-48" href="./main_onClick.html" style="color: white;">sports_esports</a>
+                <a class="material-icons md-48" href="./main_onClick.html" style="color: white;text-decoration: underline #ff8ca9 3px;">sports_esports</a>
                 <a class="material-icons md-48" href="./lesson.html" style="color: white;">waving_hand</a>
             </p>
         </div>
@@ -49,14 +49,16 @@
             <div class="set">
                 <div class="custom-select" id="set1" style="width:200px;">
                     <select name="sound" id="sound">
-                        <option value="sound" >Select sound:</option>
-                            <option value="piano">Piano</option>
-                            <option value="kalimba">Kalimba</option>
-                            <option value="bass">Bass</option>
+                        <option value="sound">Select sound:</option>
+                        <option value="Synth">Synth</option>
+                        <option value="AMSynth">AMSynth</option>
+                        <option value="DuoSynth">DuoSynth</option>
+                        <option value="FMSynth">FMSynth</option>
+                        <option value="MembraneSynth">MembraneSynth</option>
                     </select>
-    
+
                 </div>
-    
+
                 <div class="custom-select" id="set2" style="width:200px;">
                     <select name="hand" id="hand">
                         <option value="hand">Select hand:</option>
@@ -67,23 +69,25 @@
                         <option value="4">ไล่นิ้วก้อย</option>
                     </select>
                 </div>
-    
+
                 <div class="custom-select" id="set3" style="width:200px;">
-                    <select name="song" id="song"onchange="song()" >
+                    <select name="song" id="song" onchange="song()">
                         <option value="song">Select song:</option>
                         <option value="jinglebell">jingle bells</option>
                         <option value="HBD">happy birthday</option>
+                        <option value="christmas">merry christmas</option>
+                        <option value="twinkle">twinkle little star</option>
                     </select>
                 </div>
                 <!-- <button onclick="song()">play</button> -->
             </div>
-            
-    
+
+
         </div>
     </div>
-    
 
-    <p id="demo"style="color: white;"></p>
+
+    <p id="demo" style="color: white;"></p>
     <div class="piano">
         <div class="keytype">
             <canvas id="Q"></canvas>
@@ -121,9 +125,10 @@
             <canvas class="note" id="C3" data-note="C5" onclick="noteDown(this)"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script src="./scripts/tone_onclick.js"></script>
-    <script src="./scripts/click.js"></script>
+    <!-- <script src="./scripts/click.js"></script> -->
     <script src="./scripts/select.js"></script>
 </body>
 

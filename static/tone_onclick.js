@@ -1,44 +1,40 @@
-function openNav() {
-  document.getElementById("mySidebar").style.width = "180px";
-  document.getElementById("main").style.marginLeft = "180px";
-  // const synth = new Tone.Synth().toDestination();
-  // synth.triggerAttackRelease("C4", "8n");
+function noteDown(elem) {
+  var instrument = document.getElementById("sound").value;
+  if (instrument == "Synth"|| instrument == "sound") {
+    const synth = new Tone.Synth().toDestination();
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "AMSynth"){
+    const synth = new Tone.AMSynth().toDestination();
+    synth.volume.value = 5;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "DuoSynth"){
+    const synth = new Tone.DuoSynth().toDestination();
+    synth.volume.value = -10;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "FMSynth"){
+    const synth = new Tone.FMSynth().toDestination();
+    synth.volume.value = 5;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }else if (instrument == "MembraneSynth"){
+    const synth = new Tone.MembraneSynth().toDestination();
+    synth.volume.value = 0;
+    var note = elem.dataset.note;
+    synth.triggerAttackRelease(note, "16n");
+  }
+}
+Howtoplay();
+function Howtoplay() {
+  Swal.fire({
+    title: "<i>HOW TO PLAY</i>",
+    html: "1.Play with <b>Mouse Click</b>.<br><br>2.You can change <b>Sound, Type of Hand </b>and <b>Songs</b><br><br>3.Let's play!!!",
+    confirmButtonText: "<u>got it.</u>",
+  });
 }
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-
-var audios = [
-  "./sounds/piano_note/Music_Note/C.wav",
-  "./sounds/piano_note/Music_Note/D.wav",
-  "./sounds/piano_note/Music_Note/E.wav",
-  "./sounds/piano_note/Music_Note/F.wav",
-  "./sounds/piano_note/Music_Note/G.wav",
-  "./sounds/piano_note/Music_Note/A.wav",
-  "./sounds/piano_note/Music_Note/B.wav",
-  "./sounds/piano_note/Music_Note/C1.wav",
-  "./sounds/piano_note/Music_Note/D1.wav",
-  "./sounds/piano_note/Music_Note/E1.wav",
-];
-var specifics = document.querySelectorAll(".note");
-// function mouseOver() {
-//     soundC1.play();
-
-// }
-for (i = 0; i < specifics.length; i++) {
-  var specific = specifics[i];
-
-  let audio = document.createElement("audio");
-  audio.src = audios[i];
-  document.body.appendChild(audio);
-  specific.onclick = () => {
-    audio.currentTime = 0.225;
-    audio.play();
-  };
-}
 const keyList = ["C1", "D1", "E1", "F1", "G1", "A1", "B1", "C2", "D2", "E2", "F2", "G2", "A2", "B2","C3"];
 keyList.forEach((key) => {
   var canvas = document.getElementById(key);

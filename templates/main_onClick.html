@@ -50,9 +50,11 @@
                 <div class="custom-select" id="set1" style="width:200px;">
                     <select name="sound" id="sound">
                         <option value="sound">Select sound:</option>
-                        <option value="piano">Piano</option>
-                        <option value="guitar">Guitar</option>
-                        <option value="bass">Bass</option>
+                        <option value="Synth">Synth</option>
+                        <option value="AMSynth">AMSynth</option>
+                        <option value="DuoSynth">DuoSynth</option>
+                        <option value="FMSynth">FMSynth</option>
+                        <option value="MembraneSynth">MembraneSynth</option>
                     </select>
 
                 </div>
@@ -69,10 +71,12 @@
                 </div>
 
                 <div class="custom-select" id="set3" style="width:200px;">
-                    <select name="song" id="song"onchange="song()" >
+                    <select name="song" id="song" onchange="song()">
                         <option value="song">Select song:</option>
                         <option value="jinglebell">jingle bells</option>
                         <option value="HBD">happy birthday</option>
+                        <option value="christmas">merry christmas</option>
+                        <option value="twinkle">twinkle little star</option>
                     </select>
                 </div>
                 <!-- <button onclick="song()">play</button> -->
@@ -83,7 +87,7 @@
     </div>
 
 
-    <p id="demo"style="color: white;"></p>
+    <p id="demo" style="color: white;"></p>
     <div class="piano">
         <div class="keytype">
             <canvas id="Q"></canvas>
@@ -104,26 +108,27 @@
 
         </div>
         <div class="key">
-            <canvas class="note" id="C1"></canvas>
-            <canvas class="note" id="D1"></canvas>
-            <canvas class="note" id="E1"></canvas>
-            <canvas class="note" id="F1"></canvas>
-            <canvas class="note" id="G1"></canvas>
-            <canvas class="note" id="A1"></canvas>
-            <canvas class="note" id="B1"></canvas>
-            <canvas class="note" id="C2"></canvas>
-            <canvas class="note" id="D2"></canvas>
-            <canvas class="note" id="E2"></canvas>
-            <canvas class="note" id="F2"></canvas>
-            <canvas class="note" id="G2"></canvas>
-            <canvas class="note" id="A2"></canvas>
-            <canvas class="note" id="B2"></canvas>
-            <canvas class="note" id="C3"></canvas>
+            <canvas class="note" id="C1" data-note="C3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="D1" data-note="D3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="E1" data-note="E3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="F1" data-note="F3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="G1" data-note="G3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="A1" data-note="A3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="B1" data-note="B3" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="C2" data-note="C4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="D2" data-note="D4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="E2" data-note="E4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="F2" data-note="F4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="G2" data-note="G4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="A2" data-note="A4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="B2" data-note="B4" onclick="noteDown(this)"></canvas>
+            <canvas class="note" id="C3" data-note="C5" onclick="noteDown(this)"></canvas>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script src="{{url_for('static', filename='js/tone_onclick.js')}}"></script>
-    <script src="{{url_for('static', filename='js/click.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/click.js')}}"></script> -->
     <script src="{{url_for('static', filename='js/select.js')}}"></script>
 </body>
 

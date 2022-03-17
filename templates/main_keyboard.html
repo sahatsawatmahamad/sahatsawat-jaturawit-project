@@ -49,12 +49,14 @@
         <div class="settingform">
             <form>
                 <div class="set">
-                    <div class="custom-select" id="set"style="width:200px;">
+                    <div class="custom-select" id="set" style="width:200px;">
                         <select name="sound" id="sound">
                             <option value="sound">Select sound:</option>
-                            <option value="piano">Piano</option>
-                            <option value="guitar">Guitar</option>
-                            <option value="bass">Bass</option>
+                            <option value="Synth">Synth</option>
+                            <option value="AMSynth">AMSynth</option>
+                            <option value="DuoSynth">DuoSynth</option>
+                            <option value="FMSynth">FMSynth</option>
+                            <option value="MembraneSynth">MembraneSynth</option>
                         </select>
 
                     </div>
@@ -101,7 +103,8 @@
             <canvas class="note" id="C3"></canvas>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script src="{{url_for('static', filename='js/tons.js')}}"></script>
     <script src="{{url_for('static', filename='js/select.js')}}"></script>
 

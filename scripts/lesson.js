@@ -1,4 +1,18 @@
 Howtoplay();
+
+function startClick() {
+  var hand = document.getElementById("hand").value;
+  if (hand == "0") {
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/AUC-UzcUu6w?autoplay=1&mute=1";
+  } else if (hand == "1") {
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/rF2Xtr_1TX0?autoplay=1&mute=1";
+  } else if (hand == "2") {
+  } else if (hand == "3") {
+  } else if (hand == "4") {
+  }
+}
 function Easy() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
@@ -36,8 +50,6 @@ function Easy() {
     var timer = window.setInterval(countItDown, 1000);
   } else if (hand == "1") {
     var countdown = document.getElementById("countdown");
-    var clip = document.getElementById("clip");
-    clip.src = "https://www.youtube.com/embed/AUC-UzcUu6w?autoplay=1&mute=1";
     var countItDown = function () {
       var currentTime = parseFloat(countdown.textContent);
       if (currentTime >= 20) {
@@ -57,8 +69,7 @@ function Easy() {
       "finger-6-animation 10s infinite linear";
   } else if (hand == "2") {
     var countdown = document.getElementById("countdown");
-    var clip = document.getElementById("clip");
-    clip.src = "https://www.youtube.com/embed/rF2Xtr_1TX0?autoplay=1&mute=1";
+
     var countItDown = function () {
       var currentTime = parseFloat(countdown.textContent);
       if (currentTime >= 20) {
@@ -366,18 +377,6 @@ function Hard() {
       "finger-12-animation 3s infinite linear";
   }
 }
-function openNav() {
-  document.getElementById("mySidebar").style.width = "180px";
-  document.getElementById("main").style.marginLeft = "180px";
-  // const synth = new Tone.Synth().toDestination();
-  // synth.triggerAttackRelease("C4", "8n");
-}
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
 
 function alertwinEasy() {
   Swal.fire({
@@ -403,7 +402,7 @@ function alertwinhard() {
 function Howtoplay() {
   Swal.fire({
     title: "<i>HOW TO PLAY</i>",
-    html: "1.Choose type of Hand Therapy.<br><br>2.Choose level.<br><br> <b>Easy</b> 20 Seconds\n <b>Normal</b> 40 Seconds\n <b>Hard</b> 60 Seconds<br><br>3.Learn Hand Therapy from video and start.",
+    html: "1.Choose type of Hand Therapy.<br><br>2.Learn Hand Therapy from video and start.<br><br>3.Choose level.<br><br> <b>Easy</b> 20 Seconds\n <b>Normal</b> 40 Seconds\n <b>Hard</b> 60 Seconds",
     confirmButtonText: "<u>got it.</u>",
   });
 }

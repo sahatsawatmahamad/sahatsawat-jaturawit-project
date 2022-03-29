@@ -36,7 +36,8 @@
     <div class="option">
         <div class="selectpage">
             <p id="pageicon">
-                <a class="material-icons md-48" href="./main.html" style="color: white;text-decoration: underline #ff8ca9 3px;">mouse</a>
+                <a class="material-icons md-48" href="./main.html"
+                    style="color: white;text-decoration: underline #ff8ca9 3px;">mouse</a>
                 <a class="material-icons md-48" href="./main_keyboard.html" style="color: white;">keyboard</a>
                 <a class="material-icons md-48" href="./main_onClick.html" style="color: white;">sports_esports</a>
                 <a class="material-icons md-48" href="./lesson.html" style="color: white;">waving_hand</a>
@@ -56,7 +57,7 @@
                         </select>
                     </div>
                     <div class="custom-select" id="set" style="width:200px;">
-                        <select name="hand" id="hand">
+                        <select id="hand" >
                             <option value="hand">Select hand:</option>
                             <option value="0">กำมือ</option>
                             <option value="1">ไล่นิ้วชี้</option>
@@ -65,17 +66,19 @@
                             <option value="4">ไล่นิ้วก้อย</option>
                         </select>
                     </div>
+                    
                 </div>
             </form>
+            
         </div>
-
+        
     </div>
     <div id="camera">
         <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);"
             src="{{ url_for('video_feed') }}">
     </div>
     <div class="piano">
-        <div class="keytype">
+        <!-- <div class="keytype">
             <canvas id="Q"></canvas>
             <canvas id="W"></canvas>
             <canvas id="E"></canvas>
@@ -92,7 +95,7 @@
             <canvas id="L"></canvas>
             <canvas id="M"></canvas>
 
-        </div>
+        </div> -->
         <div class="key">
             <canvas class="note" id="C1" data-note="C3" onmouseover="noteDown(this)"></canvas>
             <canvas class="note" id="D1" data-note="D3" onmouseover="noteDown(this)"></canvas>

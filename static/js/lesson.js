@@ -17,34 +17,20 @@ function Easy() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
     console.log("0");
-    const img1 = document.getElementById("img1");
-    img1.src = "./handimage/open-hands.png";
-    img1.style = "background-color: white;max-width: 300px;opacity:0;";
-
-    const img2 = document.getElementById("img2");
-    img2.src = "./handimage/closed-fist.png";
-    img2.style = "background-color: white;max-width: 300px;opacity:0;";
 
     var countdown = document.getElementById("countdown");
 
     var countItDown = function () {
       var currentTime = parseFloat(countdown.textContent);
       if (currentTime >= 20) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "0";
+
         alertwinEasy();
         window.clearInterval(timer);
         countdown.textContent = "0";
       } else {
         countdown.textContent = currentTime + 1;
       }
-      if (currentTime >= 10 && currentTime <= 19) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
-      } else if (currentTime < 10) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      }
+
       console.log(currentTime);
     };
     var timer = window.setInterval(countItDown, 1000);
@@ -133,13 +119,6 @@ function Normal() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
     console.log("0");
-    const img1 = document.getElementById("img1");
-    img1.src = "./handimage/open-hands.png";
-    img1.style = "background-color: white;max-width: 300px;opacity:0;";
-
-    const img2 = document.getElementById("img2");
-    img2.src = "./handimage/closed-fist.png";
-    img2.style = "background-color: white;max-width: 300px;opacity:0;";
     var countdown = document.getElementById("countdown");
 
     var countItDown = function () {
@@ -150,19 +129,6 @@ function Normal() {
         countdown.textContent = "0";
       } else {
         countdown.textContent = currentTime + 1;
-      }
-      if (currentTime >= 10 && currentTime <= 19) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
-      } else if (currentTime < 10) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      } else if (currentTime >= 20 && currentTime <= 29) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      } else if (currentTime >= 30 && currentTime <= 39) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
       }
       console.log(currentTime);
     };
@@ -254,13 +220,7 @@ function Hard() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
     console.log("0");
-    const img1 = document.getElementById("img1");
-    img1.src = "./handimage/open-hands.png";
-    img1.style = "background-color: white;max-width: 300px;opacity:0;";
 
-    const img2 = document.getElementById("img2");
-    img2.src = "./handimage/closed-fist.png";
-    img2.style = "background-color: white;max-width: 300px;opacity:0;";
     var countdown = document.getElementById("countdown");
 
     var countItDown = function () {
@@ -272,25 +232,7 @@ function Hard() {
       } else {
         countdown.textContent = currentTime + 1;
       }
-      if (currentTime >= 10 && currentTime <= 19) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
-      } else if (currentTime < 10) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      } else if (currentTime >= 20 && currentTime <= 29) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      } else if (currentTime >= 30 && currentTime <= 39) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
-      } else if (currentTime >= 40 && currentTime <= 49) {
-        document.getElementById("img1").style.opacity = "1";
-        document.getElementById("img2").style.opacity = "0";
-      } else if (currentTime >= 50 && currentTime <= 59) {
-        document.getElementById("img1").style.opacity = "0";
-        document.getElementById("img2").style.opacity = "1";
-      }
+
       console.log(currentTime);
     };
     var timer = window.setInterval(countItDown, 1000);

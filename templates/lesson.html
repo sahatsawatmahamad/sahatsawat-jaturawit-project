@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visual instrument</title>
-  <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}" >
-  <link rel="stylesheet" href="{{ url_for ('static', filename='css/fadestyle.css') }}" >
+  <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='css/fadestyle.css') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
         <a class="material-icons md-48" href="{{url_for('main') }}" style="color: white;">mouse</a>
         <a class="material-icons md-48" href="{{('keyboard')}}" style="color: white;">keyboard</a>
         <a class="material-icons md-48" href="{{('clicks')}}" style="color: white;">sports_esports</a>
-        <a class="material-icons md-48" href="{{('lesson')}}" style="color: white;">waving_hand</a>
+        <a class="material-icons md-48" href="{{('lesson')}}" style="color: white;text-decoration: underline #ff8ca9 3px;">waving_hand</a>
       </p>
     </div>
     <div class="settingform">
@@ -62,7 +62,7 @@
           </div>
         </form>
       </div>
-      
+
     </div>
     <div class="buttonblock">
       <button class="button62" onclick="Easy()">Easy</button>
@@ -76,60 +76,62 @@
     <span id="countdown" style="color:white;">0</span>
     seconds
   </h1>
-  <div class="handtag">
-    <img id="img1" src="">
-    <img id="img2" src="">
-  </div>
-  <div style="display: flex;">
-    <div class="loading">
+  <div class="loading">
 
-      <div class="finger finger-1">
-        <div class="finger-item">
-          <span></span>
-          <i></i>
-        </div>
-      </div>
-      <div class="finger finger-2">
-        <div class="finger-item">
-          <span></span>
-          <i></i>
-        </div>
-      </div>
-      <div class="finger finger-3">
-        <div class="finger-item">
-          <span></span>
-          <i></i>
-        </div>
-      </div>
-      <div class="finger finger-4">
-        <div class="finger-item">
-          <span></span>
-          <i></i>
-        </div>
-      </div>
-      <div class="last-finger">
-        <div id="circle"></div>
-        <div class="last-finger-item" id="last-finger">
-          <span></span>
-          <i></i>
-        </div>
-        <div class="last-finger-item1" id="last-finger1">
-          <span></span>
-          <i></i>
-        </div>
+    <div class="finger finger-1">
+      <div class="finger-item">
+        <span></span>
+        <i></i>
       </div>
     </div>
+    <div class="finger finger-2">
+      <div class="finger-item">
+        <span></span>
+        <i></i>
+      </div>
+    </div>
+    <div class="finger finger-3">
+      <div class="finger-item">
+        <span></span>
+        <i></i>
+      </div>
+    </div>
+    <div class="finger finger-4">
+      <div class="finger-item">
+        <span></span>
+        <i></i>
+      </div>
+    </div>
+    <div class="last-finger">
+      <div id="circle"></div>
+      <div class="last-finger-item" id="last-finger">
+        <span></span>
+        <i></i>
+      </div>
+      <div class="last-finger-item1" id="last-finger1">
+        <span></span>
+        <i></i>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex;justify-content: space-between;margin-top: -200px;">
+   
     <div>
       <button class="watchVideo" onclick="startClick()">Watch Video</button>
       <iframe width="420" height="315" src="" id="clip">
       </iframe>
+    </div>
+    <div id="camera">
+      <img
+        style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);display: block;margin-left: auto;margin-right: 200px;margin-top: 15%;"
+        src="{{ url_for('video_feed') }}">
     </div>
   </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="{{url_for('static', filename='js/lesson.js')}}"></script>
-    <script src="{{url_for('static', filename='js/select.js')}}"></script>
+  <script src="{{url_for('static', filename='js/select.js')}}"></script>
 
 
 </body>

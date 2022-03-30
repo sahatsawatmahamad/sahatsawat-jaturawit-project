@@ -215,10 +215,10 @@ def genindexfinger():
             # Click
 
 
-            if fingers[0] == 1 and fingers[1] == 0:
+            if fingers[0] == 1 and fingers[1] == 0 and fingers[2]==1 and fingers[3]==1 and fingers[4]==1:
                 time.sleep(0.2)
                 autopy.mouse.click()
-            elif fingers[0] == 0 and fingers[1] == 0:
+            elif fingers[0] == 0 and fingers[1] == 0 and fingers[2]==1 and fingers[3]==1 and fingers[4]==1:
                 time.sleep(0.2)
                 autopy.mouse.click()
         ret, buffer = cv2.imencode('.jpg', img)
@@ -294,10 +294,10 @@ def genmiddlefinger():
             # Click
 
 
-            if fingers[0] == 1 and fingers[2] == 0:
+            if fingers[0] == 1 and fingers[2] == 0 and fingers[1] ==0 and fingers[3]==0 and fingers[4] ==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
-            elif fingers[0] == 0 and fingers[2] == 0:
+            elif fingers[0] == 0 and fingers[2] == 0 and fingers[1] ==0 and fingers[3]==0 and fingers[4] ==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
 
@@ -371,10 +371,10 @@ def genringfinger():
 
             # Click
 
-            if fingers[0] == 1 and fingers[3] == 0:
+            if fingers[0] == 1 and fingers[3] == 0 and fingers[1] ==0 and fingers[2] ==0 and fingers[4] ==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
-            elif fingers[0] == 0 and fingers[3] == 0:
+            elif fingers[0] == 0 and fingers[3] == 0 and fingers[1] ==0 and fingers[2] ==0 and fingers[4] ==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
 
@@ -448,10 +448,10 @@ def genlittlefinger():
 
             # Click
 
-            if fingers[0] == 1 and fingers[4] == 0:
+            if fingers[0] == 1 and fingers[4] == 0 and fingers[1] ==0 and fingers[2] ==0 and fingers[3]==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
-            elif fingers[0] == 0 and fingers[4] == 0:
+            elif fingers[0] == 0 and fingers[4] == 0 and fingers[1] ==0 and fingers[2] ==0 and fingers[3]==0:
                 time.sleep(0.2)
                 autopy.mouse.click()
 

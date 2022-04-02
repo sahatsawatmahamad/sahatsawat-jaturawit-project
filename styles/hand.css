@@ -352,3 +352,22 @@
   height: 50%;
   width: 18%;
 }
+@keyframes finger-3-animation {
+  0% {
+    opacity: 100%;
+  }
+  25% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 0%;
+  }
+
+  75% {
+    opacity: 50%;
+
+  }
+  100% {
+    opacity: 100%;
+  }
+}

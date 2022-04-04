@@ -4,13 +4,19 @@ function startClick() {
   var hand = document.getElementById("hand").value;
   if (hand == "0") {
     var clip = document.getElementById("clip");
-    clip.src = "https://www.youtube.com/embed/AUC-UzcUu6w?autoplay=1&mute=1";
+    clip.src = "https://www.youtube.com/embed/U8KI3KeIHUM?autoplay=1&mute=1";
   } else if (hand == "1") {
     var clip = document.getElementById("clip");
-    clip.src = "https://www.youtube.com/embed/rF2Xtr_1TX0?autoplay=1&mute=1";
+    clip.src = "https://www.youtube.com/embed/NgAu6lxa6NE?autoplay=1&mute=1";
   } else if (hand == "2") {
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/cRsegj-9lyk?autoplay=1&mute=1";
   } else if (hand == "3") {
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/hVYkrBYTbXk?autoplay=1&mute=1";
   } else if (hand == "4") {
+    var clip = document.getElementById("clip");
+    clip.src = "https://www.youtube.com/embed/6vLcCML3Xbo?autoplay=1&mute=1";
   }
 }
 function Easy() {
@@ -26,6 +32,18 @@ function Easy() {
 
         alertwinEasy();
         window.clearInterval(timer);
+        document.getElementById("finger1").style.animation =
+          "";
+        document.getElementById("finger2").style.animation =
+          "";
+        document.getElementById("finger3").style.animation =
+          "";
+        document.getElementById("finger4").style.animation =
+          "";
+        document.getElementById("last-finger").style.animation =
+          "";
+        document.getElementById("last-finger1").style.animation =
+          "";
         countdown.textContent = "0";
       } else {
         countdown.textContent = currentTime + 1;
@@ -34,6 +52,18 @@ function Easy() {
       console.log(currentTime);
     };
     var timer = window.setInterval(countItDown, 1000);
+    document.getElementById("finger1").style.animation =
+      "finger-3-animation 10s infinite linear";
+    document.getElementById("finger2").style.animation =
+      "finger-3-animation 10s infinite linear";
+    document.getElementById("finger3").style.animation =
+      "finger-3-animation 10s infinite linear";
+    document.getElementById("finger4").style.animation =
+      "finger-3-animation 10s infinite linear";
+    document.getElementById("last-finger").style.animation =
+      "finger-3-animation 10s infinite linear";
+    document.getElementById("last-finger1").style.animation =
+      "finger-3-animation 10s infinite linear";
   } else if (hand == "1") {
     var countdown = document.getElementById("countdown");
     var countItDown = function () {
@@ -126,6 +156,18 @@ function Normal() {
       if (currentTime >= 40) {
         alertwinNormal();
         window.clearInterval(timer);
+        document.getElementById("finger1").style.animation =
+          "";
+        document.getElementById("finger2").style.animation =
+          "";
+        document.getElementById("finger3").style.animation =
+          "";
+        document.getElementById("finger4").style.animation =
+          "";
+        document.getElementById("last-finger").style.animation =
+          "";
+        document.getElementById("last-finger1").style.animation =
+          "";
         countdown.textContent = "0";
       } else {
         countdown.textContent = currentTime + 1;
@@ -133,6 +175,18 @@ function Normal() {
       console.log(currentTime);
     };
     var timer = window.setInterval(countItDown, 1000);
+    document.getElementById("finger1").style.animation =
+      "finger-3-animation 6s infinite linear";
+    document.getElementById("finger2").style.animation =
+      "finger-3-animation 6s infinite linear";
+    document.getElementById("finger3").style.animation =
+      "finger-3-animation 6s infinite linear";
+    document.getElementById("finger4").style.animation =
+      "finger-3-animation 6s infinite linear";
+    document.getElementById("last-finger").style.animation =
+      "finger-3-animation 6s infinite linear";
+    document.getElementById("last-finger1").style.animation =
+      "finger-3-animation 6s infinite linear";
   } else if (hand == "1") {
     var countdown = document.getElementById("countdown");
 
@@ -228,6 +282,18 @@ function Hard() {
       if (currentTime >= 60) {
         alertwinhard();
         window.clearInterval(timer);
+        document.getElementById("finger1").style.animation =
+          "";
+        document.getElementById("finger2").style.animation =
+          "";
+        document.getElementById("finger3").style.animation =
+          "";
+        document.getElementById("finger4").style.animation =
+          "";
+        document.getElementById("last-finger").style.animation =
+          "";
+        document.getElementById("last-finger1").style.animation =
+          "";
         countdown.textContent = "0";
       } else {
         countdown.textContent = currentTime + 1;
@@ -236,6 +302,18 @@ function Hard() {
       console.log(currentTime);
     };
     var timer = window.setInterval(countItDown, 1000);
+    document.getElementById("finger1").style.animation =
+      "finger-3-animation 3s infinite linear";
+    document.getElementById("finger2").style.animation =
+      "finger-3-animation 3s infinite linear";
+    document.getElementById("finger3").style.animation =
+      "finger-3-animation 3s infinite linear";
+    document.getElementById("finger4").style.animation =
+      "finger-3-animation 3s infinite linear";
+    document.getElementById("last-finger").style.animation =
+      "finger-3-animation 3s infinite linear";
+    document.getElementById("last-finger1").style.animation =
+      "finger-3-animation 3s infinite linear";
   } else if (hand == "1") {
     var countdown = document.getElementById("countdown");
 
